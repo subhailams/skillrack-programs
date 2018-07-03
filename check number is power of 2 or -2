@@ -1,0 +1,28 @@
+//C program to check number is power od 2 or -2
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+long long int f=1,n;
+scanf("%lld",&n);
+if(n==0){
+    printf("no");
+    return 0;
+}
+else if(n>0){
+while(n%2==0){
+    n=n/2;
+}
+}
+else {
+    while(n%2==0){
+        n=n/(-2);
+    }
+}
+if(n==1)
+printf("yes");
+else
+printf("no");
+
+}
