@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char a[100],b[100],c[100];
+scanf("%s",a);scanf("%s",b);scanf("%s",c);
+int n=strlen(a),m=strlen(b),p=strlen(c);
+int k=m+(m/2)+1,q=0,s=0,t,r=p-1,u=0;
+t=k-1;//printf("%d",m%2);
+
+for(int i=0;i<(n+m)-1;i++){
+    for(int j=0;j<k;j++){
+        if(i<m){
+            if(j==s && s!=m-1){
+                printf("%c",b[q]);
+                q++;
+            }
+            
+            if(j==t && i>=m-p && t!=0){
+                printf("%c",c[r]);
+                r--;
+            }
+            else if(i<m-p && j==t){
+                printf("*");
+            }
+            else{
+                printf("-");
+            }
+        }
+        else{
+            if(j==k/2){
+                printf("%c",a[u+1]);u++;
+            }
+            else{
+                printf("-");
+            }
+        }
+    }
+    s++;t--;
+    
+    printf("\n");
+    
+}
+}
