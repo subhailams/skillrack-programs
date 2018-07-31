@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char a[100],c[100][100],t;
+    int n;
+    scanf("%d",&n);
+     for(int i=0;i<n;i++){
+         scanf("%s ",a);
+        int n=strlen(a);
+        char b[100]="";
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(a[i]==a[j] && a[i]!='0' && a[j]!='0'){
+                    a[j]='0';
+                }
+            }
+        }
+        int j=0;
+        for(int i=0;i<n;i++){
+            if(a[i]!='0'){
+                b[j]=a[i];j++;
+            }
+        }
+       for(int i=0;i<strlen(b);i++){
+           for(int j=i+1;j<strlen(b);j++){
+               if(b[i]>b[j]){
+                   t=b[i];b[i]=b[j];b[j]=t;
+               }
+           }
+       }
+       strcpy(c[i],b);}
+      int f=0;
+    for(int i=0;i<n;i++){
+         for(int j=i+1;j<n;j++){
+             if(strcmp(c[i],c[j])==0 && strcmp(c[j],"")>0){
+                 strcpy(c[j],"");f++;
+             }
+         }
+     }
+     printf("%d",n-f);
+   
+ 
+}
